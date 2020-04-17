@@ -11,15 +11,15 @@ namespace ATXBSAPP.ViewModels
         {
             public string adx_name { get; set; }
             public string new_descripcion { get; set; }
-            public string adx_releasedate { get; set; }
+            public DateTime adx_releasedate { get; set; }
             public string new_urlimagen { get; set; }
             public string new_linkpost { get; set; }
             public string createdby { get; set; }
 
             public string atx_name { get; set; }
             public string atx_descripcion { get; set; }
-            public string atx_validadesde { get; set; }
-            public string atx_validahasta { get; set; }
+            public DateTime atx_validadesde { get; set; }
+            public DateTime atx_validahasta { get; set; }
 
             public string atx_fechadeinicio { get; set; }
             public string atx_fechadefinalizacion { get; set; }

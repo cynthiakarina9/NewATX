@@ -12,7 +12,8 @@ namespace ATXBSAPP.Views
             Title = "ChatBot";
             InitializeComponent();
             var browser = new WebView();
-            browser.Source = "https://powerva.microsoft.com/webchat/bots/e3c8c8f5-3163-445b-926a-4f4b20826026";
+            browser.Source = "https://atxbot.azurewebsites.net/bot.html";            
+                   
             this.Content = browser;
         }
         private async void Back_Clicked(object sender, EventArgs e)

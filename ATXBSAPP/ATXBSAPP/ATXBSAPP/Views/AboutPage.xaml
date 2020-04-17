@@ -26,21 +26,15 @@
     <Grid>
         <ScrollView>
             <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                </Grid>
-                <StackLayout VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">
+                <StackLayout  HorizontalOptions="FillAndExpand" Grid.Row="0">
                     <Image Source="ACERCADE.pgn"></Image>
                 </StackLayout>
-                <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10" Grid.Row="1">
+                <StackLayout Orientation="Vertical" Padding="15,40,15,40" Spacing="20" Grid.Row="1">
                     <Label FontSize="22">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Atx Business Solutions" FontAttributes="Bold" FontSize="22" TextColor="#0067b0"/>
+                                    <Span Text="ATX Business Solutions" FontAttributes="Bold" FontSize="22" TextColor="#0067b0"/>
                                     <Span Text=" " />
                                     <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
                                 </FormattedString.Spans>

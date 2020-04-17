@@ -16,7 +16,7 @@
                     <Image Source="WEBINAR.png"/>
                 </StackLayout>
                 <StackLayout BackgroundColor="#0067b0">
-                        <Label HorizontalOptions="Center">
+                        <Label HorizontalOptions="Center" Margin="20,0,20,0">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
@@ -25,7 +25,7 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label HorizontalOptions="Center">
+                        <Label HorizontalOptions="Center" Margin="20,0,20,0">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
@@ -34,7 +34,7 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
@@ -44,7 +44,7 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label HorizontalOptions="Center">
+                        <Label HorizontalOptions="Center" Margin="20,0,20,0">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
@@ -54,10 +54,10 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                    <Button Text="Link de registro" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
+                    <Button Text="Link de registro" Clicked="Link1_Clicked" TextColor="#070079" BackgroundColor="Transparent"/>
                 </StackLayout>
                 <StackLayout BackgroundColor="LightGray">
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -66,7 +66,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -75,7 +75,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -85,7 +85,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -95,10 +95,10 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Button Text="Link de registro" Clicked="Link2_Clicked" TextColor="#b2daf1" BackgroundColor="Transparent"/>
+                    <Button Text="Link de registro" Clicked="Link2_Clicked" TextColor="#070079" BackgroundColor="Transparent"/>
                 </StackLayout>
                 <StackLayout BackgroundColor="#0067b0">
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -107,7 +107,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -116,7 +116,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -126,7 +126,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -136,7 +136,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Button Text="Link de registro" Clicked="Link3_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
+                    <Button Text="Link de registro" Clicked="Link3_Clicked" TextColor="#070079" BackgroundColor="Transparent"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

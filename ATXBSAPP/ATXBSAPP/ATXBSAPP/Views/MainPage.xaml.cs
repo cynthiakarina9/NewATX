@@ -48,7 +48,7 @@ namespace ATXBSAPP.Views
                         break;
                     case (int)MenuItemType.Frecuency:
                         MenuPages.Add(id, new NavigationPage(new Frecuency()));
-                        break;
+                        break;                    
                 }
             }
 

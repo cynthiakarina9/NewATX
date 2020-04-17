@@ -29,7 +29,7 @@
             </StackLayout>
         </StackLayout>
         <StackLayout VerticalOptions="FillAndExpand">
-            <ListView x:Name="ListViewMenu"
+            <ListView x:Name="ListViewMenu"                      
                     HasUnevenRows="True">
                 <d:ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">

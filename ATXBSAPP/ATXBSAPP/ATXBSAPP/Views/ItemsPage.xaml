@@ -23,20 +23,15 @@
     <Grid>
         <ScrollView>
             <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                </Grid>
+                
                 <StackLayout  VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">
                     <Image Source="HOME.png"/>
                 </StackLayout>
                 <StackLayout HorizontalOptions="Center">
-                    <Label Text="--------------------Más recientes--------------------" FontSize="12"/>
+                    <Label Text="NOTICIAS MÁS RECIENTES" FontSize="15" TextColor="#2e86c1"/>
                 </StackLayout>
-                <StackLayout>
-                    <Label HorizontalOptions="Center">
+                <StackLayout Margin="20,20,20,20">
+                    <Label HorizontalOptions="CenterAndExpand">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -48,12 +43,20 @@
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="{Binding [0].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
                     </StackLayout>
-                    <Label>
+                    <Label HorizontalOptions="CenterAndExpand" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="{Binding [0].new_descripcion}" TextColor="Black"/>
-                                    <Span Text="{Binding [0].adx_releasedate}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{Binding [0].adx_releasedate}" TextColor="#2e86c1"/>
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -62,9 +65,9 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
-        <Button Grid.Row="0" Text="Soporte" BorderColor="#000000" Clicked="support_Clicked"
-                BorderWidth="1" FontAttributes="Bold" BackgroundColor="#7a8288" 
-                BorderRadius="35" TextColor="White" HorizontalOptions="End" 
+        <Button Grid.Row="0" Text="Soporte" BorderColor="#2e86c1" Clicked="support_Clicked"
+                BorderWidth="1" FontAttributes="Bold" BackgroundColor="#2e86c1" 
+                BorderRadius="20" TextColor="White" HorizontalOptions="End" 
                 WidthRequest="90" HeightRequest="40" Margin="0,0,20,22" VerticalOptions="End"/>
     </Grid>
 </ContentPage>
