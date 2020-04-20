@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,7 +22,7 @@ namespace ATXBSAPP.Views
         }
         async void Chat_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new WebPage()));
+            await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
         }
     }
 }
