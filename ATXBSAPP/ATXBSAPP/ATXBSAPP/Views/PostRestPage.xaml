@@ -12,7 +12,7 @@
         <Grid>
             <RefreshView IsRefreshing="{Binding IsRefreshing}"
              Command="{Binding RefreshCommand}"
-             RefreshColor="Orange">
+             RefreshColor="Teal">
                 <ScrollView>
                     <StackLayout>
                         <StackLayout VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">

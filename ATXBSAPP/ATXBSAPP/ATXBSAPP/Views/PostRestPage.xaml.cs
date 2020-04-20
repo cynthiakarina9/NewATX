@@ -7,11 +7,16 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using static ATXBSAPP.ViewModels.NewsViewModel;
 
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+
 namespace ATXBSAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PostRestPage : ContentPage
-    {
+    {      
         public List<ValueN> weatherData = new List<ValueN>();
        
         RestService _restService; 
@@ -65,5 +70,44 @@ namespace ATXBSAPP.Views
             string data4 = weatherData[3].new_linkpost;
             await Browser.OpenAsync(data4);
         }
+
+
+        const int RefreshDuration = 2;
+        int itemNumber = 1;
+        readonly Random random;
+        bool isRefreshing;
+
+        public bool IsRefreshing
+        {
+            get { return isRefreshing; }
+            set
+            {
+                isRefreshing = value;
+                OnPropertyChanged();
+            }
+        }    
+
+        public ICommand RefreshCommand => new Command(async () => await RefreshItemsAsync());   
+
+        async Task RefreshItemsAsync()
+        {
+            IsRefreshing = true;
+            await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
+            weatherData = await _restService.GetWeatherDataAsync();
+            IsRefreshing = false;
+        }
+
+        #region INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #endregion
+
+
     }
-}
+}      
