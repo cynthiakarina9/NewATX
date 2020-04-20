@@ -25,6 +25,7 @@ namespace ATXBSAPP.Views
                 new HomeMenuItem {Id = MenuItemType.Webinar, Title="Eventos en línea"},
                 new HomeMenuItem {Id = MenuItemType.Promotions, Title="Promociones"},
                 new HomeMenuItem {Id = MenuItemType.Frecuency, Title="Preguntas frecuentes"},
+                new HomeMenuItem {Id = MenuItemType.Youtube, Title="Videos"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="Acerca de"}
             };
 

@@ -1,36 +1,39 @@
 ﻿
+using ATXAPP;
 using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static ATXBSAPP.ViewModels.FrecuencyViewModel;
 
 namespace ATXBSAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Frecuency : ContentPage
     {
-        public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+        public List<ValueF> weatherData = new List<ValueF>();
+        RestServiceFrecuency _restService;
         public Frecuency()
         {
             InitializeComponent();
-            BindingContext = this;
+            _restService = new RestServiceFrecuency();
         }
 
+        
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new WebPage()));
         }
-        public void OnMore(object sender, EventArgs e)
+        protected override async void OnAppearing()
         {
-            var mi = ((MenuItem)sender);
-            DisplayAlert("More Context Action", mi.CommandParameter + " more context action", "OK");
-        }
-
-        public void OnDelete(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender);
-            DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
+            if (weatherData.Count < 1)
+            {
+                weatherData = await _restService.GetWeatherDataAsync();
+                BindingContext = weatherData;
+                OnAppearing();
+            }
         }
     }
 }
