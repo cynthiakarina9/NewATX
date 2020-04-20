@@ -10,7 +10,8 @@ namespace ATXBSAPP.Models
         Promotions,
         Store,
         Webinar,
-        Frecuency
+        Frecuency,
+        Youtube
     }
     public class HomeMenuItem
     {
