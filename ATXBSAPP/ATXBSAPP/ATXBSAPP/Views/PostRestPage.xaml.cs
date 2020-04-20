@@ -18,7 +18,7 @@ namespace ATXBSAPP.Views
         public PostRestPage()
         {
             InitializeComponent();
-            _restService = new RestService();
+            _restService = new RestService();           
         }
 
         protected override async void OnAppearing()
