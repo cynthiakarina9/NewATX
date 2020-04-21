@@ -51,5 +51,10 @@ namespace ATXBSAPP.Views
             string data3 = weatherData3[1].atx_linkderegistro;
             await Browser.OpenAsync(data3);
         }
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
     }
 }

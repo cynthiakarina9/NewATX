@@ -12,7 +12,7 @@
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png"/>
+        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
         <ToolbarItem Order="Primary" Icon="iconfinder_chat.png" Priority="1" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
 

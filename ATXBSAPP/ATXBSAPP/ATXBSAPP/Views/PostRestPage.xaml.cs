@@ -64,6 +64,12 @@ namespace ATXBSAPP.Views
             await Browser.OpenAsync(data3);
         }
 
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
+
         async void Link4_Clicked(object sender, EventArgs e)
         {
             weatherData = await _restService.GetWeatherDataAsync();

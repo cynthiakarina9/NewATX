@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ATXBSAPP.Models;
+using System;
 using System.ComponentModel;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -19,6 +21,11 @@ namespace ATXBSAPP.Views
         {
             await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
         }
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {            
+            await RootPage.NavigateFromMenu(0);
+        }       
 
         async void FB_Clicked(object sender, EventArgs e)
         {

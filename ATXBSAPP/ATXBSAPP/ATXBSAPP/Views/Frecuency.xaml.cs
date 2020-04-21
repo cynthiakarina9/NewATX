@@ -21,7 +21,12 @@ namespace ATXBSAPP.Views
             _restService = new RestServiceFrecuency();
         }
 
-        
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
+
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html"); 

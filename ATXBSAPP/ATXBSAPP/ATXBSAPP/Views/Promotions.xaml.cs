@@ -26,6 +26,12 @@ namespace ATXBSAPP.Views
             await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
         }
 
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
+
         protected override async void OnAppearing()
         {
             if (weatherData.Count < 1)
