@@ -10,8 +10,8 @@ namespace ATXBSAPP.ViewModels
         {
             public string atx_name { get; set; }
             public string atx_descripcion { get; set; }
-            public string atx_fechadeinicio { get; set; }
-            public string atx_fechadefinalizacion { get; set; }
+            public DateTime atx_fechadeinicio { get; set; }
+            public DateTime atx_fechadefinalizacion { get; set; }
             public string atx_linkderegistro { get; set; }
             public string createdby { get; set; }
         }

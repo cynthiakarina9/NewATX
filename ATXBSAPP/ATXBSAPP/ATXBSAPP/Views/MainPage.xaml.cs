@@ -49,6 +49,9 @@ namespace ATXBSAPP.Views
                     case (int)MenuItemType.Frecuency:
                         MenuPages.Add(id, new NavigationPage(new Frecuency()));
                         break;
+                    case (int)MenuItemType.Youtube:
+                        MenuPages.Add(id, new NavigationPage(new youtube_view()));
+                        break;
                 }
             }
 
