@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
              mc:Ignorable="d"
              x:Class="ATXBSAPP.Views.PostRestPage">
     <ContentPage.ToolbarItems>
@@ -10,10 +10,11 @@
         <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Grid>
-            <RefreshView IsRefreshing="{Binding IsRefreshing}"
-             Command="{Binding RefreshCommand}"
-             RefreshColor="Teal">
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"
+             RefreshColor="Teal"
+             Command="{Binding RefreshCommand}">
+            <Grid>
+
                 <ScrollView>
                     <StackLayout>
                         <StackLayout VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">
@@ -162,7 +163,7 @@
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
-            </RefreshView>
-        </Grid>
+            </Grid>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

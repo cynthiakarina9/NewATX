@@ -108,9 +108,7 @@ namespace ATXAPP
 
                 res2 = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));
 
-
-
-                Console.WriteLine("ok");
+                responses.Dispose();
             }
             catch (Exception ex)
             {
