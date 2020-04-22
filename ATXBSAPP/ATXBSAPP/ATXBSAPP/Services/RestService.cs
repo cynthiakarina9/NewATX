@@ -52,20 +52,16 @@ namespace ATXAPP
                 if (responses.IsSuccessStatusCode)
                 {
                     json = await responses.Content.ReadAsStringAsync();
-
                     Console.WriteLine("OK");
                 }
-
                 JObject information = JObject.Parse(json);
-
                 string json2 = JsonConvert.SerializeObject(information["value"]);
-
-
                 res = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));
 
-
-
                 Console.WriteLine("ok");
+                httpClient.CancelPendingRequests();
+                httpClient.Dispose();
+                responses.Dispose();              
             }
             catch (Exception ex)
             {

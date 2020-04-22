@@ -21,20 +21,17 @@ namespace ATXBSAPP.Views
         RestService _restService; 
         public PostRestPage()
         {
-            InitializeComponent();
+            InitializeComponent();           
             _restService = new RestService();
-            this.BindingContext = new Update_noticias();
+            Prueba();
         }
 
-        protected override async void OnAppearing()
+        async void Prueba()
         {
-            if (weatherData.Count < 1)
-            {
-                weatherData = await _restService.GetWeatherDataAsync();
-                BindingContext = weatherData;
-                OnAppearing();
-            }
+            weatherData = await _restService.GetWeatherDataAsync();
+            BindingContext = weatherData;
         }
+
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
@@ -75,6 +72,39 @@ namespace ATXBSAPP.Views
             weatherData = await _restService.GetWeatherDataAsync();
             string data4 = weatherData[3].new_linkpost;
             await Browser.OpenAsync(data4);
-        }               
+        }
+
+        const int RefreshDuration = 2;        
+        readonly Random random;
+        bool isRefreshing;
+
+        public bool IsRefreshing
+        {
+            get { return isRefreshing; }
+            set
+            {
+                isRefreshing = value;
+                OnPropertyChanged();
+            }
+        }        
+
+        public ICommand RefreshCommand => new Command(async () => await RefreshItemsAsync());    
+
+        async Task RefreshItemsAsync()
+        {
+            IsRefreshing = true;
+            await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
+            Prueba();
+            IsRefreshing = false;
+        }
+        #region INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }
