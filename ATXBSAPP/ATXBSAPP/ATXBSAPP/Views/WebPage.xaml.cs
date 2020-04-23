@@ -7,6 +7,7 @@ namespace ATXBSAPP.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WebPage : ContentPage
     {
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         public WebPage()
         {
             Title = "ChatBot";
@@ -21,5 +22,9 @@ namespace ATXBSAPP.Views
             await Navigation.PopAsync();
         }
 
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
     }
 }

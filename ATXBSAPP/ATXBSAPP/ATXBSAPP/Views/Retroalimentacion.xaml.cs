@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,16 +6,17 @@ using Xamarin.Forms.Xaml;
 namespace ATXBSAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class youtube_view : ContentPage
+    public partial class Retroalimentacion : ContentPage
     {
-        public youtube_view()
+        public Retroalimentacion()
         {
-            Title = "YouTube";
+            Title = "Retroalimentación";
             InitializeComponent();
             var browser = new WebView();
-            browser.Source = "https://www.youtube.com/user/atxbusiness";
+            browser.Source = "https://forms.office.com/Pages/ResponsePage.aspx?id=sfJeOsaGvEGjDJRwmo0FkCs_3-BCLNBOlJsrHLoD3WhUMTNUMFIzVTVDRFE2RDRUUlIyQlRFWlMzVS4u";
             this.Content = browser;
         }
+
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await RootPage.NavigateFromMenu(9);

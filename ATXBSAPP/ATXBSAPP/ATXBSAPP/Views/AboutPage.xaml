@@ -49,8 +49,8 @@
                                     <Span Text="Esta es una aplicacón creada por" />
                                     <Span Text=" " />
                                     <Span Text="ATX " FontAttributes="Bold" />
-                                    <Span Text="en "/>
-                                    <Span Text=" Xamarin Platform" FontAttributes="Bold" />
+                                    <Span Text="con tecnología "/>
+                                    <Span Text="Microsoft" FontAttributes="Bold" />
                                     <Span Text="." />
                                 </FormattedString.Spans>
                             </FormattedString>

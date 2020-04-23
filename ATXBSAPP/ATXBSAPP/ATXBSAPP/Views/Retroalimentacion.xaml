@@ -4,16 +4,17 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ATXBSAPP.Views.WebPage">
+             x:Class="ATXBSAPP.Views.Retroalimentacion">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked" />
+        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
+        <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Bienvenido Chatbot"
+            <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

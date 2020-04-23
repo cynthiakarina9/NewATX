@@ -10,6 +10,7 @@ namespace ATXBSAPP.ViewModels
         {
             public string atx_name { get; set; }
             public string atx_respuesta { get; set; }
+            public string new_url { get; set; }
         }
         public class RootObject
         {

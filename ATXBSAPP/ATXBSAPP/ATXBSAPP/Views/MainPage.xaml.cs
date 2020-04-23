@@ -37,14 +37,23 @@ namespace ATXBSAPP.Views
                     case (int)MenuItemType.News:
                         MenuPages.Add(id, new NavigationPage(new PostRestPage()));
                         break;
+                    case (int)MenuItemType.Retro:
+                        MenuPages.Add(id, new NavigationPage(new Retroalimentacion()));
+                        break;
                     case (int)MenuItemType.Webinar:
                         MenuPages.Add(id, new NavigationPage(new Webinar()));
                         break;
                     case (int)MenuItemType.Promotions:
                         MenuPages.Add(id, new NavigationPage(new Promotions()));
                         break;
+                    case (int)MenuItemType.Frecuency:
+                        MenuPages.Add(id, new NavigationPage(new Frecuency()));
+                        break;
                     case (int)MenuItemType.Youtube:
                         MenuPages.Add(id, new NavigationPage(new youtube_view()));
+                        break;
+                    case (int)MenuItemType.Chat:
+                        MenuPages.Add(id, new NavigationPage(new WebPage()));
                         break;
                 }
             }

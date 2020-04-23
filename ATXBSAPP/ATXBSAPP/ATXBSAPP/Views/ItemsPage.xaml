@@ -9,6 +9,7 @@
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
         <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" Order="Primary"/>
     </ContentPage.ToolbarItems>
 

@@ -17,7 +17,7 @@ namespace ATXBSAPP.Views
     {
         public List<ValueN> weatherData = new List<ValueN>();
         public List<ValueN> weatherData2 = new List<ValueN>();
-
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         RestService _restService;
         public ItemsPage()
         {
@@ -33,7 +33,7 @@ namespace ATXBSAPP.Views
 
         async void Chat_Clicked(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
+            await RootPage.NavigateFromMenu(9);
         }
         async void Webinar_Clicked(object sender, EventArgs e)
         {
@@ -49,6 +49,9 @@ namespace ATXBSAPP.Views
             string data1 = weatherData[0].new_linkpost;
             await Browser.OpenAsync(data1);
         }
-
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
     }
 }

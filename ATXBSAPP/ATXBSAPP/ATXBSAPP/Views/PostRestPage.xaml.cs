@@ -24,7 +24,6 @@ namespace ATXBSAPP.Views
             InitializeComponent();           
             _restService = new RestService();
             Prueba2();
-            this.BindingContext = new Update_noticias();
         }
 
         protected async void OnAppearing()
@@ -39,7 +38,7 @@ namespace ATXBSAPP.Views
         }
         async void Chat_Clicked(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
+            await RootPage.NavigateFromMenu(9);
         }
         async void Link0_Clicked(object sender, EventArgs e)
         {
