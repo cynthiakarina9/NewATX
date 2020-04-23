@@ -27,12 +27,8 @@ namespace ATXBSAPP.Views
 
         protected override async void OnAppearing()
         {
-            if (weatherData.Count == 0)
-            {
-                weatherData = await _restService.GetWeatherDataAsync();
-                BindingContext = weatherData;
-                OnAppearing();
-            }
+            weatherData = await _restService.GetWeatherDataAsync();
+            BindingContext = weatherData;
         }
 
         async void Chat_Clicked(object sender, EventArgs e)

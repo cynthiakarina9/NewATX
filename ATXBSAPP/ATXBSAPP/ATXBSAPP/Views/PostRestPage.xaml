@@ -10,9 +10,7 @@
         <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <RefreshView IsRefreshing="{Binding IsRefreshing}"
-             RefreshColor="Teal"
-             Command="{Binding RefreshCommand}">
+       
             <Grid>
 
                 <ScrollView>
@@ -164,6 +162,5 @@
                     </StackLayout>
                 </ScrollView>
             </Grid>
-        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

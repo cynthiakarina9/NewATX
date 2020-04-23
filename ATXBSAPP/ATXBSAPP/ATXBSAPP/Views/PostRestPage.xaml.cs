@@ -18,20 +18,25 @@ namespace ATXBSAPP.Views
     {      
         public List<ValueN> weatherData = new List<ValueN>();
        
-        RestService _restService; 
+        RestService _restService;
         public PostRestPage()
         {
             InitializeComponent();           
             _restService = new RestService();
-            Prueba();
+            Prueba2();
+            this.BindingContext = new Update_noticias();
         }
 
-        async void Prueba()
-        {
+        protected async void OnAppearing()
+        {   
             weatherData = await _restService.GetWeatherDataAsync();
             BindingContext = weatherData;
         }
 
+        public void Prueba2()
+        {
+            OnAppearing();
+        }
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
@@ -74,37 +79,8 @@ namespace ATXBSAPP.Views
             await Browser.OpenAsync(data4);
         }
 
-        const int RefreshDuration = 2;        
-        readonly Random random;
-        bool isRefreshing;
+        
 
-        public bool IsRefreshing
-        {
-            get { return isRefreshing; }
-            set
-            {
-                isRefreshing = value;
-                OnPropertyChanged();
-            }
-        }        
-
-        public ICommand RefreshCommand => new Command(async () => await RefreshItemsAsync());    
-
-        async Task RefreshItemsAsync()
-        {
-            IsRefreshing = true;
-            await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
-            Prueba();
-            IsRefreshing = false;
-        }
-        #region INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
+      
     }
 }

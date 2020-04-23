@@ -33,12 +33,8 @@ namespace ATXBSAPP.Views
         }
         protected override async void OnAppearing()
         {
-            if (weatherData.Count < 1)
-            {
-                weatherData = await _restService.GetWeatherDataAsync();
-                BindingContext = weatherData;
-                OnAppearing();
-            }
+            weatherData = await _restService.GetWeatherDataAsync();
+            BindingContext = weatherData;
         }
     }
 }
