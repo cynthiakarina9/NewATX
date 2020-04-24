@@ -39,11 +39,11 @@ namespace ATXBSAPP.Views
 
         async void Instagram_Clicked(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://www.linkedin.com/company/atx-business-solutions/");
+            await Browser.OpenAsync("https://www.instagram.com/potenciatunegocio/");
         }
         async void Twitter_Clicked(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://www.linkedin.com/company/atx-business-solutions/");
+            await Browser.OpenAsync("https://twitter.com/atxbusiness");
         }
     }
 }
