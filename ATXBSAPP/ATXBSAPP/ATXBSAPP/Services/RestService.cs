@@ -30,7 +30,7 @@ namespace ATXAPP
         static string redirectUrl = "https://atx.api.crm.dynamics.com/api/data/v9.1/";
         List<ValueN> res = null;
         List<ValueN> res2 = null;
-        string res3 = new List<ValueN>().ToString();
+        HttpResponseMessage responses;
         public async Task<List<ValueN>> GetWeatherDataAsync()
         {
             try
@@ -40,13 +40,13 @@ namespace ATXAPP
                 httpClient = new HttpClient();
                 //Default Request Headers needed to be added in the HttpClient Object
                 httpClient.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
-                httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");       
+                httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Set the Authorization header with the Access Token received specifying the Credentials
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
                 httpClient.BaseAddress = new Uri(redirectUrl);
-                HttpResponseMessage responses = await httpClient.GetAsync("adx_ads?$select=adx_name,new_descripcion,adx_releasedate,new_urlimagen,new_linkpost,createdby&$orderby=adx_releasedate%20desc");
+                responses = await httpClient.GetAsync("adx_ads?$select=adx_name,new_descripcion,adx_releasedate,new_urlimagen,new_linkpost,createdby&$orderby=adx_releasedate%20desc");
                 responses.EnsureSuccessStatusCode();
                 string json = "";
                 if (responses.IsSuccessStatusCode)
@@ -56,8 +56,11 @@ namespace ATXAPP
                 }
                 JObject information = JObject.Parse(json);
                 string json2 = JsonConvert.SerializeObject(information["value"]);
-                res = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));                
+                res = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));
 
+                Console.WriteLine("ok");
+                httpClient.CancelPendingRequests();
+                httpClient.Dispose();
             }
             catch (Exception ex)
             {
@@ -65,6 +68,7 @@ namespace ATXAPP
             }
 
             return res;
+
         }
 
         public async Task<List<ValueN>> GetWeatherData2Async()
@@ -98,7 +102,9 @@ namespace ATXAPP
                 string json2 = JsonConvert.SerializeObject(information["value"]);
 
 
-                res2 = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));               
+                res2 = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));
+
+                responses.Dispose();
             }
             catch (Exception ex)
             {

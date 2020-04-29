@@ -16,275 +16,25 @@
                 <StackLayout>
                     <StackLayout>
                         <StackLayout  HorizontalOptions="FillAndExpand" Grid.Row="0">
-                            <Image Source="PREGUNTASFRECUENTES.pgn"></Image>
+                            <Image Source="ebooks.pgn"></Image>
                         </StackLayout>
                         <StackLayout Orientation="Vertical" Padding="15,40,15,40" Spacing="20" Grid.Row="1">
                             <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [0].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [0].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding [0].new_url}" TextColor="Blue" FontSize="Body"/>
+                                            <Span Text="{Binding [0].atx_name}" FontSize="Large" TextColor="#0067b0"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [1].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                            <Span Text="{Binding [1].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
+                            <Label Text="{Binding [0].atx_respuesta}" TextColor="Black" FontSize="Body"/>
+                            <Button Text="{Binding [0].new_url}" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
                             <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding [1].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [2].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                            <Span Text="{Binding [2].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [2].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [3].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                            <Span Text="{Binding [3].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [3].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [4].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                            <Span Text="{Binding [4].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [4].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [5].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [5].atx_respuesta}" TextColor="Black"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [5].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [6].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [6].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [6].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [7].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [7].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [7].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [8].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [8].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [8].new_url}" TextColor="Blue" FontSize="Body"/>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [9].atx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding [9].atx_respuesta}" TextColor="Black" FontSize="Body"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding [9].new_url}" TextColor="Blue" FontSize="Body"/>
+                                            <Span Text="{Binding [1].atx_name}" FontSize="Large" TextColor="#0067b0"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -293,7 +43,17 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding [10].atx_name}" FontSize="Large" TextColor="#0067b0"/>
+                                        <Span Text="{Binding [1].atx_respuesta}" TextColor="Black" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="{Binding [1].new_url}" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>    
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [2].atx_name}" FontSize="Large" TextColor="#0067b0"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -302,7 +62,17 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding [10].atx_respuesta}" TextColor="Black" FontSize="Body"/>
+                                        <Span Text="{Binding [2].atx_respuesta}" TextColor="Black" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="{Binding [2].new_url}" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [3].atx_name}" FontSize="Large" TextColor="#0067b0"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -311,11 +81,50 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding [10].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        <Span Text="{Binding [3].atx_respuesta}" TextColor="Black" FontSize="Body"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
+                            <Button Text="{Binding [3].new_url}" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [4].atx_name}" FontSize="Large" TextColor="#0067b0"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                        <Span Text="{Binding [4].atx_respuesta}" TextColor="Black" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="{Binding [4].new_url}" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [5].atx_name}" FontSize="Large" TextColor="#0067b0"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [5].atx_respuesta}" TextColor="Black"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                                <Button Text="{Binding [5].new_url}" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

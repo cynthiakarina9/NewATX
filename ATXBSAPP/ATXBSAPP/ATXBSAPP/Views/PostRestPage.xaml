@@ -2,213 +2,165 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:ATXBSAPP.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
              mc:Ignorable="d"
              x:Class="ATXBSAPP.Views.PostRestPage">
-
-
-
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked" />
-        <ToolbarItem Icon="reload.png" Priority="1" Clicked="refresch_Clicked"/>
-        <ToolbarItem Icon="iconfinder_chat.png" Priority="2" Clicked="Chat_Clicked" />
+        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
+        <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
-
-
-
-
-
-
-
-
-
-
-
-    <ListView x:Name="get_noticias" HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}"                                                      >
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Margin="20,10,20,10">
-                        <Image HeightRequest="230" WidthRequest="320" Source="{Binding new_urlimagen}"></Image>
-                        <Label Text="{Binding adx_name}" TextColor="#0067b0"></Label>
-                        <Label Text="{Binding new_descripcion}" TextColor="Black"></Label>
-                        <Label Text="{Binding adx_releasedate}" TextColor="#2e86c1"></Label>
-
-                        <Label Text="{Binding new_linkpost}" ></Label>
-
-
-
-
-
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-
-
-
-
-
-
-
-
-
     <ContentPage.Content>
-        <Grid>
-            <ScrollView>
-                <StackLayout>
-                    <StackLayout VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">
-                        <Image Source="NOTICIAS.pgn"/>
-                    </StackLayout>
-                    <StackLayout Margin="20,10,20,10">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                            <ContentView Padding="0,40,0,40" VerticalOptions="CenterAndExpand" >
-                                <Image Source="{Binding [0].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
-                            </ContentView>
+       
+            <Grid>
+
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">
+                            <Image Source="NOTICIAS.pgn"/>
                         </StackLayout>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [0].adx_name}" FontSize="Large" TextColor="#0067b0" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [0].new_descripcion}" TextColor="Black"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [0].adx_releasedate}" TextColor="#2e86c1"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Button Text="Más información" Clicked="Link1_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
-                    </StackLayout>
-                    <StackLayout Margin="20,10,20,10">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                            <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                                <Image Source="{Binding [1].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
-                            </ContentView>
+                        <StackLayout Margin="20,10,20,10">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <ContentView Padding="0,40,0,40" VerticalOptions="CenterAndExpand" >
+                                    <Image Source="{Binding [0].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
+                                </ContentView>
+                            </StackLayout>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [0].adx_name}" FontSize="Large" TextColor="#0067b0" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [0].new_descripcion}" TextColor="Black"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [0].adx_releasedate}" TextColor="#2e86c1"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="Más información" Clicked="Link1_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
                         </StackLayout>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [1].adx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [1].new_descripcion}" TextColor="Black"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [1].adx_releasedate}" TextColor="#2e86c1"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Button Text="Más información" Clicked="Link2_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
-                    </StackLayout>
-                    <StackLayout Margin="20,10,20,10">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                            <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                                <Image Source="{Binding [2].new_urlimagen}" />
-                            </ContentView>
+                        <StackLayout Margin="20,10,20,10">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                                    <Image Source="{Binding [1].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
+                                </ContentView>
+                            </StackLayout>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [1].adx_name}" FontSize="Large" TextColor="#0067b0"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [1].new_descripcion}" TextColor="Black"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [1].adx_releasedate}" TextColor="#2e86c1"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="Más información" Clicked="Link2_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
                         </StackLayout>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [2].adx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [2].new_descripcion}" TextColor="Black"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [2].adx_releasedate}" TextColor="#2e86c1"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Button Text="Más información" Clicked="Link3_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
-                    </StackLayout>
-                    <StackLayout Margin="20,10,20,10">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="{Binding [3].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
+                        <StackLayout Margin="20,10,20,10">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                                    <Image Source="{Binding [2].new_urlimagen}" />
+                                </ContentView>
+                            </StackLayout>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [2].adx_name}" FontSize="Large" TextColor="#0067b0"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [2].new_descripcion}" TextColor="Black"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [2].adx_releasedate}" TextColor="#2e86c1"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="Más información" Clicked="Link3_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
                         </StackLayout>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [3].adx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding weatherData[3].new_descripcion}" TextColor="Black"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding [3].adx_releasedate}" TextColor="#2e86c1"/>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Button Text="Más información" Clicked="Link4_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
+                        <StackLayout Margin="20,10,20,10">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Image Source="{Binding [3].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
+                            </StackLayout>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [3].adx_name}" FontSize="Large" TextColor="#0067b0"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [3].new_descripcion}" TextColor="Black"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [3].adx_releasedate}" TextColor="#2e86c1"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="Más información" Clicked="Link4_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                        <StackLayout Margin="20,10,20,10">
+                            <Button Text="Más noticias" Clicked="Link0_Clicked" TextColor="White" BackgroundColor="#030336"/>
+                        </StackLayout>
                     </StackLayout>
-                    <StackLayout Margin="20,10,20,10">
-                        <Button Text="Más noticias" Clicked="Link0_Clicked" TextColor="White" BackgroundColor="#030336"/>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
-        </Grid>
+                </ScrollView>
+            </Grid>
     </ContentPage.Content>
-
-
-
-    
 </ContentPage>

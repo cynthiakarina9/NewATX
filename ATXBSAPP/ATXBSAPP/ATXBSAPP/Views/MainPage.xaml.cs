@@ -37,8 +37,8 @@ namespace ATXBSAPP.Views
                     case (int)MenuItemType.News:
                         MenuPages.Add(id, new NavigationPage(new PostRestPage()));
                         break;
-                    case (int)MenuItemType.Store:
-                        MenuPages.Add(id, new NavigationPage(new Store()));
+                    case (int)MenuItemType.Retro:
+                        MenuPages.Add(id, new NavigationPage(new Retroalimentacion()));
                         break;
                     case (int)MenuItemType.Webinar:
                         MenuPages.Add(id, new NavigationPage(new Webinar()));
@@ -51,6 +51,9 @@ namespace ATXBSAPP.Views
                         break;
                     case (int)MenuItemType.Youtube:
                         MenuPages.Add(id, new NavigationPage(new youtube_view()));
+                        break;
+                    case (int)MenuItemType.Chat:
+                        MenuPages.Add(id, new NavigationPage(new WebPage()));
                         break;
                 }
             }

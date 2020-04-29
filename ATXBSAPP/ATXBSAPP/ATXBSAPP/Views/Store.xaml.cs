@@ -19,7 +19,7 @@ namespace ATXBSAPP.Views
 
         async void Chat_Clicked(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
+            await RootPage.NavigateFromMenu(9);
         }
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         async void home_Clicked(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace ATXBSAPP.Views
 
         async void Chat_Clicked(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
+            await RootPage.NavigateFromMenu(9);
         }
 
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
@@ -34,12 +34,8 @@ namespace ATXBSAPP.Views
 
         protected override async void OnAppearing()
         {
-            if (weatherData.Count < 1)
-            {
-                weatherData = await _restService.GetWeatherData2Async();
-                BindingContext = weatherData;
-                OnAppearing();
-            }                   
+            weatherData = await _restService.GetWeatherData2Async();
+            BindingContext = weatherData;                   
         }
     }
 }
