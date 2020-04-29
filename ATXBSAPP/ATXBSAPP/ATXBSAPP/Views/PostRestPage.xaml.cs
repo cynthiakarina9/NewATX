@@ -1,40 +1,56 @@
 ﻿using ATXAPP;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using static ATXBSAPP.ViewModels.NewsViewModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using System.ServiceModel.Channels;
 
 namespace ATXBSAPP.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PostRestPage : ContentPage
-    {      
-        public List<ValueN> weatherData = new List<ValueN>();
-       
-        RestService _restService; 
+   
+    public partial class PostRestPage : INotifyPropertyChanged
+    {
+        public RestService _restService;
+        public List<ViewModels.NewsViewModel.ValueN> weatherData = new List<ViewModels.NewsViewModel.ValueN>();        
         public PostRestPage()
         {
-            InitializeComponent();           
+            InitializeComponent();
             _restService = new RestService();
+            const int RefreshDuration = 2;
+
             Prueba();
+            get_noticias.RefreshCommand = new Command(async() => {
+                get_noticias.IsRefreshing = true;
+                await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
+                Prueba();
+                get_noticias.IsRefreshing = false;
+            });
         }
-
-        async void Prueba()
-        {
+        
+        public async void Prueba()
+        {            
             weatherData = await _restService.GetWeatherDataAsync();
-            BindingContext = weatherData;
+            ObservableCollection<ValueN> lista_noticias = new ObservableCollection<ValueN>(weatherData);
+            get_noticias.ItemsSource = lista_noticias;            
         }
-
+        
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
+        }
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
+        }
+        async void refresch_Clicked(object sender, EventArgs e)
+        {
+            Prueba();
         }
         async void Link0_Clicked(object sender, EventArgs e)
         {
@@ -61,50 +77,11 @@ namespace ATXBSAPP.Views
             await Browser.OpenAsync(data3);
         }
 
-        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        async void home_Clicked(object sender, EventArgs e)
-        {
-            await RootPage.NavigateFromMenu(0);
-        }
-
         async void Link4_Clicked(object sender, EventArgs e)
         {
             weatherData = await _restService.GetWeatherDataAsync();
             string data4 = weatherData[3].new_linkpost;
             await Browser.OpenAsync(data4);
         }
-
-        const int RefreshDuration = 2;        
-        readonly Random random;
-        bool isRefreshing;
-
-        public bool IsRefreshing
-        {
-            get { return isRefreshing; }
-            set
-            {
-                isRefreshing = value;
-                OnPropertyChanged();
-            }
-        }        
-
-        public ICommand RefreshCommand => new Command(async () => await RefreshItemsAsync());    
-
-        async Task RefreshItemsAsync()
-        {
-            IsRefreshing = true;
-            await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
-            Prueba();
-            IsRefreshing = false;
-        }
-        #region INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
     }
 }

@@ -40,7 +40,7 @@ namespace ATXAPP
                 httpClient = new HttpClient();
                 //Default Request Headers needed to be added in the HttpClient Object
                 httpClient.DefaultRequestHeaders.Add("OData-MaxVersion", "4.0");
-                httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");
+                httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");       
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Set the Authorization header with the Access Token received specifying the Credentials
@@ -56,12 +56,8 @@ namespace ATXAPP
                 }
                 JObject information = JObject.Parse(json);
                 string json2 = JsonConvert.SerializeObject(information["value"]);
-                res = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));
+                res = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));                
 
-                Console.WriteLine("ok");
-                httpClient.CancelPendingRequests();
-                httpClient.Dispose();
-                responses.Dispose();              
             }
             catch (Exception ex)
             {
@@ -102,9 +98,7 @@ namespace ATXAPP
                 string json2 = JsonConvert.SerializeObject(information["value"]);
 
 
-                res2 = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));
-
-                responses.Dispose();
+                res2 = (List<ValueN>)JsonConvert.DeserializeObject(json2, typeof(List<ValueN>));               
             }
             catch (Exception ex)
             {

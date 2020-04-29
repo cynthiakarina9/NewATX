@@ -37,6 +37,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [0].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -55,6 +64,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [1].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -73,6 +91,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [2].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -91,6 +118,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [3].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -109,6 +145,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [4].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -127,6 +172,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [5].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -145,6 +199,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [6].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -163,6 +226,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [7].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -181,6 +253,15 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [8].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -203,6 +284,15 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
+                                            <Span Text="{Binding [9].new_url}" TextColor="Blue" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
                                             <Span Text="{Binding [10].atx_name}" FontSize="Large" TextColor="#0067b0"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
@@ -213,6 +303,15 @@
                                     <FormattedString>
                                         <FormattedString.Spans>
                                             <Span Text="{Binding [10].atx_respuesta}" TextColor="Black" FontSize="Body"/>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding [10].new_url}" TextColor="Blue" FontSize="Body"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
