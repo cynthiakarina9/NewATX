@@ -11,7 +11,9 @@ namespace ATXBSAPP.Models
         Store,
         Webinar,
         Frecuency,
-        Youtube
+        Youtube,
+        Retro,
+        Chat
     }
     public class HomeMenuItem
     {

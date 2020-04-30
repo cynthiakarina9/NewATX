@@ -10,40 +10,54 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.ServiceModel.Channels;
+using System.Collections.ObjectModel;
 
 namespace ATXBSAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PostRestPage : ContentPage
-    {      
-        public List<ValueN> weatherData = new List<ValueN>();
-       
-        RestService _restService;
+    {
+        public RestService _restService;
+        public List<ViewModels.NewsViewModel.ValueN> weatherData = new List<ViewModels.NewsViewModel.ValueN>();
+
         public PostRestPage()
         {
-            InitializeComponent();           
+            InitializeComponent();
             _restService = new RestService();
-            Prueba2();
+            const int RefreshDuration = 2;
+
+            Prueba();
+            get_noticias.RefreshCommand = new Command(async () => {
+                get_noticias.IsRefreshing = true;
+                await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
+                Prueba();
+                get_noticias.IsRefreshing = false;
+            });
         }
 
-        protected async void OnAppearing()
-        {   
-            weatherData = await _restService.GetWeatherDataAsync();
-            BindingContext = weatherData;
-        }
-
-        public void Prueba2()
+        public async void Prueba()
         {
-            OnAppearing();
+            weatherData = await _restService.GetWeatherDataAsync();
+            ObservableCollection<ValueN> lista_noticias = new ObservableCollection<ValueN>(weatherData);
+            get_noticias.ItemsSource = lista_noticias;
+        }   
+
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void home_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(0);
         }
+
         async void Chat_Clicked(object sender, EventArgs e)
         {
             await RootPage.NavigateFromMenu(9);
         }
+
         async void Link0_Clicked(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://atx.mx/news/");
         }
+
         async void Link1_Clicked(object sender, EventArgs e)
         {
             weatherData = await _restService.GetWeatherDataAsync();
@@ -63,23 +77,13 @@ namespace ATXBSAPP.Views
             weatherData = await _restService.GetWeatherDataAsync();
             string data3 = weatherData[2].new_linkpost;
             await Browser.OpenAsync(data3);
-        }
-
-        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        async void home_Clicked(object sender, EventArgs e)
-        {
-            await RootPage.NavigateFromMenu(0);
-        }
+        }        
 
         async void Link4_Clicked(object sender, EventArgs e)
         {
             weatherData = await _restService.GetWeatherDataAsync();
             string data4 = weatherData[3].new_linkpost;
             await Browser.OpenAsync(data4);
-        }
-
-        
-
-      
+        }              
     }
 }
