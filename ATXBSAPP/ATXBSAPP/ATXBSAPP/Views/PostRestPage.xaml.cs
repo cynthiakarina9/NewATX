@@ -58,6 +58,14 @@ namespace ATXBSAPP.Views
             await Browser.OpenAsync("https://atx.mx/news/");
         }
 
+        async void Mas_info_Clicked(object sender, EventArgs e)
+        {
+            var billId = (sender as Button).CommandParameter;
+
+            await Browser.OpenAsync(billId.ToString());
+
+        }        
+
         async void Link1_Clicked(object sender, EventArgs e)
         {
             weatherData = await _restService.GetWeatherDataAsync();
