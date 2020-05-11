@@ -64,7 +64,7 @@ namespace ATXBSAPP.Views
 
             await Browser.OpenAsync(billId.ToString());
 
-        }        
+        }     
 
         async void Link1_Clicked(object sender, EventArgs e)
         {
