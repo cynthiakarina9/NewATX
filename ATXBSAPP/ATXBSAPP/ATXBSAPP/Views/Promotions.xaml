@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.TitleIconImageSource="AppATXImagenlogoatx.png"
              x:Class="ATXBSAPP.Views.Promotions">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
-        <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" />
+        <!--<ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>-->
+        <ToolbarItem Icon="AppATXImagenchat.png" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
     <Grid>
         <ScrollView>

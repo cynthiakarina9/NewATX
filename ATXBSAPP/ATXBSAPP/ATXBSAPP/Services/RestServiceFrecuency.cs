@@ -27,7 +27,9 @@ namespace ATXAPP
             _client = new HttpClient();
 
         }
+#pragma warning disable CS0414 // El campo 'RestServiceFrecuency.serviceUri' está asignado pero su valor nunca se usa
         static string serviceUri = "https://atx.crm.dynamics.com/";
+#pragma warning restore CS0414 // El campo 'RestServiceFrecuency.serviceUri' está asignado pero su valor nunca se usa
         static string redirectUrl = "https://atx.api.crm.dynamics.com/api/data/v9.1/";
         List<ValueF> res = null;
         

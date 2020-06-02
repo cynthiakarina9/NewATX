@@ -5,69 +5,169 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ATXBSAPP.Views.ItemsPage"
+             BackgroundImageSource="Fondo3.jpeg"     
+             NavigationPage.TitleIconImageSource="AppATXImagenlogoatx.png"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" Order="Primary"/>
+        <ToolbarItem Icon="AppATXImagenchat.png" Clicked="Chat_Clicked" Order="Primary"/>
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#007bbf</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
+
     <Grid>
-        <ScrollView>
-            <StackLayout>
-                
-                <StackLayout  VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Grid.Row="0">
-                    <Image Source="HOME.png"/>
-                </StackLayout>
-                <StackLayout HorizontalOptions="Center">
-                    <Label Text="NOTICIAS MÁS RECIENTES" FontSize="15" TextColor="#2e86c1"/>
-                </StackLayout>
-                <StackLayout Margin="20,20,20,20">
-                    <Label HorizontalOptions="CenterAndExpand">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="{Binding [0].adx_name}" FontSize="Large" TextColor="#0067b0"/>
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="{Binding [0].new_urlimagen}" HeightRequest="230" WidthRequest="320"/>
-                    </StackLayout>
-                    <Label HorizontalOptions="CenterAndExpand" >
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="{Binding [0].new_descripcion}" TextColor="Black"/>
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label HorizontalOptions="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="{Binding [0].adx_releasedate}" TextColor="#2e86c1"/>
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Button Text="Más información" Clicked="Link1_Clicked" TextColor="#55befa" BackgroundColor="Transparent"/>
-                </StackLayout>
-            </StackLayout>
-        </ScrollView>
-        <Button Grid.Row="0" Text="Soporte" BorderColor="#2e86c1" Clicked="support_Clicked"
-                BorderWidth="1" FontAttributes="Bold" BackgroundColor="#2e86c1" 
-                BorderRadius="20" TextColor="White" HorizontalOptions="End" 
-                WidthRequest="90" HeightRequest="40" Margin="0,0,20,22" VerticalOptions="End"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!--Titulo-->
+
+        <BoxView Grid.Row="0" 
+                 Grid.ColumnSpan="2" 
+                 BackgroundColor="Transparent"/>
+
+        <Label Grid.Row="0" 
+               Grid.ColumnSpan="2" 
+               Text="  ATX Mobile"
+               FontSize="Title"
+               TextColor="DarkBlue"
+               HorizontalOptions="StartAndExpand"
+               VerticalOptions="StartAndExpand"  
+               Margin="0,5,0,15"/>
+
+        <Label Grid.Row="0" 
+               Grid.ColumnSpan="2" 
+               Text="  Bienvenido"
+               FontSize="Large"
+               TextColor="DarkBlue"
+               HorizontalOptions="StartAndExpand"
+               VerticalOptions="EndAndExpand"  
+               Margin="0,15,0,0"/>
+
+        <!--End Titulo-->
+
+        <!--BoxView 1-->
+
+        <BoxView Grid.Row="1" 
+                 Color="Transparent"                  
+                 CornerRadius="15" />
+
+        <!--<Image Source="AppATXImagenlogoatxnoticias.png" 
+               Grid.Row="1"                               
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"/>-->
+
+        <Button Grid.Row="1"                                
+                ImageSource="AppATXImagenlogoatxnoticias2.png"   
+                AnchorX="200"
+                AnchorY="200"    
+                Clicked="noticias"
+                BackgroundColor="Transparent"/>
+
+        <!--BoxView 2-->
+
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="Transparent"                 
+                 CornerRadius="15" />
+        <!--<Image Source="AppATXImagenlogoatxwebinars.png" 
+               Grid.Row="1" 
+               Grid.Column="1"                          
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"/>-->
+
+        <Button Grid.Row="1" 
+                Grid.Column="1"
+                ImageSource="AppATXImagenlogoatxwebinars2.png"   
+                AnchorX="200"
+                AnchorY="200"   
+                Clicked="webinars"
+                BackgroundColor="Transparent"/>
+
+        <!--BoxView 3-->
+
+        <BoxView Grid.Row="2"
+                 Color="Transparent" 
+                 Margin="15,7,7,15" 
+                 CornerRadius="15" />
+        <!--<Image Source="AppATXImagenlogoatxwebinars.png" 
+               Grid.Row="2"                              
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"/>-->
+
+        <Button Grid.Row="2"                                
+                ImageSource="AppATXImagenlogoatxsoluciones2.png"   
+                AnchorX="200"
+                AnchorY="200"   
+                Clicked="soluciones"
+                BackgroundColor="Transparent"/>
+
+        <!--BoxView 4-->
+
+        <BoxView Grid.Row="2"
+                 Grid.Column="1"
+                 Color="Transparent"
+                 Margin="7,7,15,15"
+                 CornerRadius="15" />
+
+        <!--<Image Source="AppATXImagenlogoatxebooks.png" 
+               Grid.Row="2" 
+               Grid.Column="1"               
+               VerticalOptions="StartAndExpand"               
+               HorizontalOptions="CenterAndExpand"/>-->
+
+        <Button Grid.Row="2" 
+                Grid.Column="1"
+                ImageSource="AppATXImagenlogoatxebooks2.png"   
+                AnchorX="200"
+                AnchorY="200"     
+                Clicked="ebooks"
+                BackgroundColor="Transparent"/>
+
+        <!--BoxView 5-->
+
+        <BoxView Grid.Row="3"
+                 Color="Transparent" 
+                 Margin="15,7,7,15" 
+                 CornerRadius="15" />
+        <!--<Image Source="AppATXImagenlogoatxvideos.png" 
+               Grid.Row="3"               
+               VerticalOptions="StartAndExpand" 
+               HorizontalOptions="CenterAndExpand"/>-->
+
+        <Button Grid.Row="3"                                
+                ImageSource="AppATXImagenlogoatxvideos2.png"   
+                AnchorX="200"
+                AnchorY="200" 
+                Clicked="videos"
+                BackgroundColor="Transparent"/>
+
+        <!--BoxView 6-->
+
+        <BoxView Grid.Row="3"
+                 Grid.Column="1"
+                 Color="Transparent"
+                 Margin="7,7,15,15"
+                 CornerRadius="15" />
+        <!--<Image Source="AppATXImagenlogoatxacercade.png" 
+               Grid.Row="3" 
+               Grid.Column="1"               
+               VerticalOptions="StartAndExpand"               
+               HorizontalOptions="CenterAndExpand"/>-->
+        <Button Grid.Row="3" 
+                Grid.Column="1"
+                ImageSource="AppATXImagenlogoatxacercade2.png"   
+                AnchorX="200"
+                AnchorY="200"   
+                Clicked="acercade"
+                BackgroundColor="Transparent"/>
     </Grid>
 </ContentPage>
