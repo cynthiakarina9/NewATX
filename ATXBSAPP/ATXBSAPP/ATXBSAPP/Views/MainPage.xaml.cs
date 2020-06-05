@@ -20,6 +20,7 @@ namespace ATXBSAPP.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+
         }
 
         public async Task NavigateFromMenu(int id)
@@ -55,6 +56,9 @@ namespace ATXBSAPP.Views
                     case (int)MenuItemType.Chat:
                         MenuPages.Add(id, new NavigationPage(new WebPage()));
                         break;
+                    //case (int)MenuItemType.Menu_II:
+                    //    MenuPages.Add(id, new NavigationPage(new Menu_II()));
+                    //    break;
                 }
             }
 

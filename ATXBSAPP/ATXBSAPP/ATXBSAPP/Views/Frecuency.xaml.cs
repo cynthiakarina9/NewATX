@@ -2,6 +2,8 @@
 using ATXAPP;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -13,13 +15,23 @@ namespace ATXBSAPP.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Frecuency : ContentPage
     {
-        public List<ValueF> weatherData = new List<ValueF>();
         RestServiceFrecuency _restService;
+        public List<ViewModels.FrecuencyViewModel.ValueF> weatherData = new List<ViewModels.FrecuencyViewModel.ValueF>();
         public Frecuency()
         {
             InitializeComponent();
             _restService = new RestServiceFrecuency();
-            BindingContext = this;
+            //BindingContext = this;
+            const int RefreshDuration = 2;
+
+            Prueba();
+            get_noticias.RefreshCommand = new Command(async () => {
+                get_noticias.IsRefreshing = true;
+                await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
+                Prueba();
+                get_noticias.IsRefreshing = false;
+            });
+
         }
         public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
@@ -28,15 +40,47 @@ namespace ATXBSAPP.Views
             await RootPage.NavigateFromMenu(0);
         }
 
-        async void Chat_Clicked(object sender, EventArgs e)
-        {
-            await RootPage.NavigateFromMenu(9); 
-        }
-        protected override async void OnAppearing()
+
+
+        public async void Prueba()
         {
             weatherData = await _restService.GetWeatherDataAsync();
-            BindingContext = weatherData;
+            ObservableCollection<ValueF> lista_noticias = new ObservableCollection<ValueF>(weatherData);
+            get_noticias.ItemsSource = lista_noticias;
         }
+
+        async void Mas_info_Clicked(object sender, EventArgs e)
+        {
+            var billId = (sender as Button).CommandParameter;
+
+            await Browser.OpenAsync(billId.ToString());
+
+        }
+
+        //protected override async void OnAppearing()
+        //{
+        //    weatherData = await _restService.GetWeatherDataAsync();
+        //    BindingContext = weatherData;
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        async void Chat_Clicked(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(9);
+        }
+
+
         async void Link1_Clicked(object sender, EventArgs e)
         {
             weatherData = await _restService.GetWeatherDataAsync();

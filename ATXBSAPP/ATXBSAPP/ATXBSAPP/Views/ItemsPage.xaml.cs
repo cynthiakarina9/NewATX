@@ -17,7 +17,7 @@ namespace ATXBSAPP.Views
     {
         public List<ValueN> weatherData = new List<ValueN>();
         public List<ValueN> weatherData2 = new List<ValueN>();
-        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+
         RestService _restService;
         public ItemsPage()
         {
@@ -27,31 +27,72 @@ namespace ATXBSAPP.Views
 
         protected override async void OnAppearing()
         {
-            weatherData = await _restService.GetWeatherDataAsync();
-            BindingContext = weatherData;
+            if (weatherData.Count == 0)
+            {
+                weatherData = await _restService.GetWeatherDataAsync();
+                BindingContext = weatherData;
+                OnAppearing();
+            }
         }
 
         async void Chat_Clicked(object sender, EventArgs e)
         {
+            //await Browser.OpenAsync("https://atxbot.azurewebsites.net/bot.html");
+
             await RootPage.NavigateFromMenu(9);
         }
         async void Webinar_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new Webinar()));
         }
-        async void support_Clicked(object sender, EventArgs e)
+        
+        
+
+
+
+
+
+
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        async void noticias(object sender, EventArgs e)
         {
-            await Browser.OpenAsync("https://soporte.atx.com.mx");
+            await RootPage.NavigateFromMenu(2);
         }
-        async void Link1_Clicked(object sender, EventArgs e)
+
+        //private void noticias(object sender, EventArgs e) 
+        //{
+        //    ((NavigationPage)this.Parent).PushAsync(new PostRestPage());
+        //}
+
+        async void webinars(object sender, EventArgs e)
         {
-            weatherData = await _restService.GetWeatherDataAsync();
-            string data1 = weatherData[0].new_linkpost;
-            await Browser.OpenAsync(data1);
+            await RootPage.NavigateFromMenu(5);
         }
-        async void home_Clicked(object sender, EventArgs e)
+
+        async void soluciones(object sender, EventArgs e)
         {
-            await RootPage.NavigateFromMenu(0);
+            await RootPage.NavigateFromMenu(3);
         }
+
+        async void ebooks(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(6);
+        }
+
+        async void videos(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(7);
+        }
+
+        async void acercade(object sender, EventArgs e)
+        {
+            await RootPage.NavigateFromMenu(1);
+        }
+
+
+
+
+
+
     }
 }

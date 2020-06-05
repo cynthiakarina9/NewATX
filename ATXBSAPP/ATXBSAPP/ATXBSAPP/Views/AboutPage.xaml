@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.TitleIconImageSource="AppATXImagenlogoatx.png"
              x:Class="ATXBSAPP.Views.AboutPage"
              xmlns:vm="clr-namespace:ATXBSAPP.ViewModels"            
              Title="{Binding Title}">
@@ -12,8 +13,7 @@
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
-        <ToolbarItem Order="Primary" Icon="iconfinder_chat.png" Priority="1" Clicked="Chat_Clicked" />
+        <ToolbarItem Order="Primary" Icon="AppATXImagenchat.png" Priority="1" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -49,8 +49,8 @@
                                     <Span Text="Esta es una aplicacón creada por" />
                                     <Span Text=" " />
                                     <Span Text="ATX " FontAttributes="Bold" />
-                                    <Span Text="con tecnología "/>
-                                    <Span Text="Microsoft" FontAttributes="Bold" />
+                                    <Span Text="en "/>
+                                    <Span Text=" Xamarin Platform" FontAttributes="Bold" />
                                     <Span Text="." />
                                 </FormattedString.Spans>
                             </FormattedString>

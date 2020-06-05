@@ -19,14 +19,16 @@ namespace ATXBSAPP.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Inicio"},                
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Inicio"}, 
+                
                 new HomeMenuItem {Id = MenuItemType.News, Title="Noticias"},
                 new HomeMenuItem {Id = MenuItemType.Webinar, Title="Eventos en línea"},
                 new HomeMenuItem {Id = MenuItemType.Promotions, Title="Promociones"},
                 new HomeMenuItem {Id = MenuItemType.Frecuency, Title="Ebooks"},
                 new HomeMenuItem {Id = MenuItemType.Youtube, Title="Videos"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="Acerca de"},
-                new HomeMenuItem {Id = MenuItemType.Retro, Title="Retroalimentación"}
+                new HomeMenuItem {Id = MenuItemType.Retro, Title="Retroalimentación"},
+                //new HomeMenuItem {Id = MenuItemType.Menu_II, Title="Menu 2.0"}
             };
 
             ListViewMenu.ItemsSource = menuItems;

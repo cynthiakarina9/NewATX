@@ -5,9 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ATXBSAPP.Views.WebPage">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout>
             <Label Text="test" AbsoluteLayout.LayoutBounds="0,0,0,0" />

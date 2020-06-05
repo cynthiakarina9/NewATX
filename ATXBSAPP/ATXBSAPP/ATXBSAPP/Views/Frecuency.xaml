@@ -4,13 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.TitleIconImageSource="AppATXImagenlogoatx.png"
              x:Class="ATXBSAPP.Views.Frecuency">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>
-        <ToolbarItem Icon="iconfinder_chat.png" Clicked="Chat_Clicked" />
+        <!--<ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>-->
+        <ToolbarItem Icon="AppATXImagenchat.png" Clicked="Chat_Clicked" />
     </ContentPage.ToolbarItems>
     
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <Grid>
             <ScrollView>
                 <StackLayout>
@@ -130,7 +131,47 @@
                 </StackLayout>
             </ScrollView>
         </Grid>
-    </ContentPage.Content>
-    
+    </ContentPage.Content>-->
+
+
+
+
+
+
+    <ListView x:Name="get_noticias" Header="" BackgroundColor="White" HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.4*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions >
+
+
+                        <Label Grid.Row="1" Text="{Binding atx_name}" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" TextColor="#0067b0" FontSize="Medium"></Label>
+                        <Label Grid.Row="1" Margin="0,30,0,50" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Text="{Binding atx_respuesta}" TextColor="Black" MaxLines="5"></Label>
+
+                        <Button Grid.Row="1" Margin="0,30,0,0" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Text="Más información" CommandParameter="{Binding new_url}" Clicked="Mas_info_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
+
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <ContentView BackgroundColor="#0066cc">
+                    <Label Margin="10" HorizontalOptions="CenterAndExpand" Text="EBooks" FontSize="Title" TextColor="White"/>
+                </ContentView>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+    </ListView>
+
+
+
+
 
 </ContentPage>
