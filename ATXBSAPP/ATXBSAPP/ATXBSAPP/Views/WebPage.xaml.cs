@@ -14,7 +14,6 @@ namespace ATXBSAPP.Views
             InitializeComponent();
            
         }
-        //https://atxbot.azurewebsites.net/bot.html
 
         async void home_Clicked(object sender, EventArgs e)
         {
