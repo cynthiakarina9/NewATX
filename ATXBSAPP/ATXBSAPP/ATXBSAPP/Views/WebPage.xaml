@@ -9,11 +9,10 @@
         <ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Bienvenido Chatbot"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-        </StackLayout>
+        <AbsoluteLayout>
+            <Label Text="test" AbsoluteLayout.LayoutBounds="0,0,0,0" />
+            <WebView Source="https://atxbot.azurewebsites.net/bot.html"
+      AbsoluteLayout.LayoutBounds="0,150,500,500" />
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
