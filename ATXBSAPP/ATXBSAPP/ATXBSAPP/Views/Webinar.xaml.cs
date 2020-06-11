@@ -1,6 +1,8 @@
 ﻿using ATXAPP;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -12,12 +14,37 @@ namespace ATXBSAPP.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Webinar : ContentPage
     {
-        public List<ValueW> weatherData3 = new List<ValueW>();
+        //public List<ValueW> weatherData3 = new List<ValueW>();
+        public List<ViewModels.WebinarVewModel.ValueW> weatherData3 = new List<ViewModels.WebinarVewModel.ValueW>();
         RestServiceWebinar _restService;
         public Webinar()
         {
             InitializeComponent();
             _restService = new RestServiceWebinar();
+
+
+            const int RefreshDuration = 2;
+
+            Prueba();
+            get_webinar.RefreshCommand = new Command(async () => {
+                get_webinar.IsRefreshing = true;
+                await Task.Delay(TimeSpan.FromSeconds(RefreshDuration));
+                Prueba();
+                get_webinar.IsRefreshing = false;
+            });
+        }       
+
+        public async void Prueba()
+        {
+            weatherData3 = await _restService.GetWeatherData3Async();
+            ObservableCollection<ValueW> lista_noticias = new ObservableCollection<ValueW>(weatherData3);
+            get_webinar.ItemsSource = lista_noticias;
+        }
+
+        async void Mas_info_Clicked(object sender, EventArgs e)
+        {
+            var billId = (sender as Button).CommandParameter;
+            await Browser.OpenAsync(billId.ToString());
         }
 
         protected override async void OnAppearing()

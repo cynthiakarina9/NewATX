@@ -48,7 +48,8 @@ namespace ATXAPP
                 //Set the Authorization header with the Access Token received specifying the Credentials
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
                 httpClient.BaseAddress = new Uri(redirectUrl);
-                responses = await httpClient.GetAsync("adx_ads?$select=adx_name,new_descripcion,adx_releasedate,new_urlimagen,new_linkpost,createdby&$orderby=adx_releasedate%20desc");
+                responses = await httpClient.GetAsync("adx_ads?$select=adx_name,new_descripcion,adx_releasedate,new_urlimagen,new_linkpost,createdby&$orderby=adx_releasedate desc&$filter=statecode eq 0");
+                //https://atx.crm.dynamics.com/api/data/v9.1/adx_ads?$select=adx_name,new_descripcion,adx_releasedate,new_urlimagen,new_linkpost,createdby&$orderby=adx_releasedate%20desc&$filter=statecode%20eq%200
                 responses.EnsureSuccessStatusCode();
                 string json = "";
                 if (responses.IsSuccessStatusCode)
