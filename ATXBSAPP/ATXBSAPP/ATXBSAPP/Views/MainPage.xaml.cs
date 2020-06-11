@@ -56,9 +56,12 @@ namespace ATXBSAPP.Views
                     case (int)MenuItemType.Chat:
                         MenuPages.Add(id, new NavigationPage(new WebPage()));
                         break;
-                    //case (int)MenuItemType.Menu_II:
-                    //    MenuPages.Add(id, new NavigationPage(new Menu_II()));
-                    //    break;
+                    case (int)MenuItemType.Menu_II:
+                        MenuPages.Add(id, new NavigationPage(new Menu_II()));
+                        break;
+                    case (int)MenuItemType.Tess_eventos:
+                        MenuPages.Add(id, new NavigationPage(new Tess_eventos()));
+                        break;
                 }
             }
 

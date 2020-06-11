@@ -14,7 +14,8 @@ namespace ATXBSAPP.Models
         Youtube,
         Retro,
         Chat,
-        Menu_II
+        Menu_II, 
+        Tess_eventos
     }
     public class HomeMenuItem
     {

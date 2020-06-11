@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ATXBSAPP.Views.Tess_eventos">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>-->
+        <ToolbarItem Icon="AppATXImagenchat.png" Clicked="Chat_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <!--<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout  HorizontalOptions="FillAndExpand" Grid.Row="0">
+                    <Image Source="WEBINAR.png"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="#0067b0">
+                        <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                    <Span Text="{Binding [0].atx_name}" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding [0].atx_descripcion}" TextColor="White"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                    <Span Text="Fecha de inicio:" FontAttributes="Bold" TextColor="White"/>
+                                    <Span Text="{Binding [0].atx_fechadeinicio}" TextColor="LightGray"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                    <Span Text="Fecha de finalización:" FontAttributes="Bold" TextColor="White"/>
+                                    <Span Text="{Binding [0].atx_fechadefinalizacion}" TextColor="LightGray"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    <Button Text="Link de registro" Clicked="Link1_Clicked" TextColor="#070079" BackgroundColor="Transparent"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="LightGray">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{Binding [1].atx_name}" FontSize="Large" TextColor="#0067b0" FontAttributes="Bold"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{Binding [1].atx_descripcion}" TextColor="Black"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Fecha de inicio:" FontAttributes="Bold" TextColor="Black"/>
+                                    <Span Text="{Binding [1].atx_fechadeinicio}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Fecha de finalización:" FontAttributes="Bold" TextColor="Black"/>
+                                    <Span Text="{Binding [1].atx_fechadefinalizacion}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Text="Link de registro" Clicked="Link2_Clicked" TextColor="#070079" BackgroundColor="Transparent"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="#0067b0">
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{Binding [2].atx_name}" FontSize="Large" TextColor="White" FontAttributes="Bold"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{Binding [2].atx_descripcion}" TextColor="White"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Fecha de inicio:" FontAttributes="Bold" TextColor="White"/>
+                                    <Span Text="{Binding [2].atx_fechadeinicio}" TextColor="LightGray"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" Margin="20,0,20,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Fecha de finalización:" FontAttributes="Bold" TextColor="White"/>
+                                    <Span Text="{Binding [2].atx_fechadefinalizacion}" TextColor="LightGray"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Text="Link de registro" Clicked="Link3_Clicked" TextColor="#070079" BackgroundColor="Transparent"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>-->
+
+    <ListView x:Name="get_webinar" Header="" BackgroundColor="White" HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.4*" />
+                            <RowDefinition Height="0.3*" />
+                            <RowDefinition Height="0.3*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions >
+                        <!--<Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />-->
+                        <Label Grid.Row="0" Grid.ColumnSpan="2" Margin="20,0,20,0" Text="{Binding atx_name}" FontSize="Large" MaxLines="5"></Label>
+                        <Label Grid.Row="1" HorizontalOptions="Center" Text="{Binding atx_fechadeinicio}" Margin="5,5,5,5" TextColor="#0067b0" FontSize="Medium" MaxLines="5"></Label>
+                        <Label Grid.Row="1" HorizontalOptions="Center" Grid.Column="1" Text="{Binding atx_fechadefinalizacion}" Margin="5,5,5,5" TextColor="#0067b0" FontSize="Medium" MaxLines="5"></Label>
+                        <!--<Label Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand" Margin="5,5,5,5" Text="{Binding atx_fechadeinicio} {Binding atx_fechadefinalizacion}" TextColor="Black" MaxLines="5"></Label>-->
+                        <!--<Label Text="{Binding adx_releasedate}" TextColor="#2e86c1" Margin="0,3,0,3"></Label>-->
+
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="5,5,5,5"  Text="Registrarse" CommandParameter="{Binding atx_linkderegistro}" Clicked="Mas_info_Clicked" TextColor="#1085c8" BackgroundColor="Transparent"/>
+
+                        <!--<Label Text="{Binding new_linkpost}" TextColor="Blue" Margin="0,3,0,15">></Label>-->
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <ContentView BackgroundColor="#0066cc">
+                    <Label Margin="10" HorizontalOptions="CenterAndExpand" Text="Eventos" FontSize="Title" TextColor="White"/>
+                </ContentView>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+    </ListView>
+</ContentPage>
