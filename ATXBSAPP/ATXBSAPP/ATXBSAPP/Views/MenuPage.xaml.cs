@@ -28,6 +28,8 @@ namespace ATXBSAPP.Views
                 new HomeMenuItem {Id = MenuItemType.Youtube, Title="Videos"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="Acerca de"},
                 new HomeMenuItem {Id = MenuItemType.Retro, Title="Retroalimentación"},
+                new HomeMenuItem {Id = MenuItemType.Menu_II, Title="Menu_II"},
+                new HomeMenuItem {Id = MenuItemType.Tess_eventos, Title="Tess_eventos"}
                 //new HomeMenuItem {Id = MenuItemType.Menu_II, Title="Menu 2.0"}
             };
 
