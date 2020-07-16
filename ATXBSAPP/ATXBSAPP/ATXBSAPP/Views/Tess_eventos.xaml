@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             NavigationPage.TitleIconImageSource="AppATXImagenlogoatx.png"
-             x:Class="ATXBSAPP.Views.Webinar">
+             x:Class="ATXBSAPP.Views.Tess_eventos">
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem IconImageSource="atx_logo.png" Priority="0" Clicked="home_Clicked"/>-->
         <ToolbarItem Icon="AppATXImagenchat.png" Clicked="Chat_Clicked" />
@@ -158,7 +157,7 @@
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions >
-                        <!--<Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />-->                        
+                        <!--<Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />-->
                         <Label Grid.Row="0" Grid.ColumnSpan="2" Margin="20,0,20,0" Text="{Binding atx_name}" FontSize="Large" MaxLines="5"></Label>
                         <Label Grid.Row="1" HorizontalOptions="Center" Text="{Binding atx_fechadeinicio}" Margin="5,5,5,5" TextColor="#0067b0" FontSize="Medium" MaxLines="5"></Label>
                         <Label Grid.Row="1" HorizontalOptions="Center" Grid.Column="1" Text="{Binding atx_fechadefinalizacion}" Margin="5,5,5,5" TextColor="#0067b0" FontSize="Medium" MaxLines="5"></Label>
@@ -181,5 +180,4 @@
             </DataTemplate>
         </ListView.HeaderTemplate>
     </ListView>
-
 </ContentPage>

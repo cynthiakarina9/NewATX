@@ -12,12 +12,11 @@ using static ATXBSAPP.ViewModels.WebinarVewModel;
 namespace ATXBSAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Webinar : ContentPage
+    public partial class Tess_eventos : ContentPage
     {
-        //public List<ValueW> weatherData3 = new List<ValueW>();
         public List<ViewModels.WebinarVewModel.ValueW> weatherData3 = new List<ViewModels.WebinarVewModel.ValueW>();
         RestServiceWebinar _restService;
-        public Webinar()
+        public Tess_eventos()
         {
             InitializeComponent();
             _restService = new RestServiceWebinar();
@@ -32,8 +31,7 @@ namespace ATXBSAPP.Views
                 Prueba();
                 get_webinar.IsRefreshing = false;
             });
-        }       
-
+        }
         public async void Prueba()
         {
             weatherData3 = await _restService.GetWeatherData3Async();

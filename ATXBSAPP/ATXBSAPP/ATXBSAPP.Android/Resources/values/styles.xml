@@ -31,7 +31,7 @@
     
   </style>
   
-  <color name="ListViewSelected">#3498db</color>
+  <color name="ListViewSelected">#0066cc</color>
   <color name="ListViewHighlighted">#ffffff</color>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
